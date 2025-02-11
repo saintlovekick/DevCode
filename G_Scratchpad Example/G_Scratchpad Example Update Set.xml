@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><unload unload_date="2025-02-11 20:52:25">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description/>
+<inserted/>
+<name>G_Scratchpad Example</name>
+<origin_sys_id/>
+<parent display_value=""/>
+<release_date/>
+<remote_base_update_set display_value=""/>
+<remote_parent_id/>
+<remote_sys_id>00b87f9783271210d5c55930ceaad335</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2025-02-11 20:52:25</sys_created_on>
+<sys_id>074abb9783271210d5c55930ceaad3ae</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2025-02-11 20:52:25</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_script_client_4995cb9b83231210d5c55930ceaad324</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description&gt;If "Restricted Group" is selected from the list avoid assigning incidents. &lt;/description&gt;&lt;field&gt;assignment_group&lt;/field&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Avoid Assignment to Restricted Groups&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+	
+/*********************************************************
+- restricted_group = variable to store scratchpad values
+- newValue = stores the newly selected value
+**********************************************************/
+    var restricted_group = g_scratchpad.restricted_group_property;
+    if (restricted_group.includes(newValue)) {
+        g_form.clearMessages();
+        g_form.addErrorMessage("You cannot assign an Incident to this group");
+        // Clear the assignment group field
+        g_form.setValue("assignment_group", "");
+    }
+
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-11 17:08:54&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;4995cb9b83231210d5c55930ceaad324&lt;/sys_id&gt;&lt;sys_mod_count&gt;9&lt;/sys_mod_count&gt;&lt;sys_name&gt;Avoid Assignment to Restricted Groups&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_4995cb9b83231210d5c55930ceaad324&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-11 20:52:08&lt;/sys_updated_on&gt;&lt;table&gt;incident&lt;/table&gt;&lt;type&gt;onChange&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-227890340</payload_hash>
+<remote_update_set display_value="G_Scratchpad Example">074abb9783271210d5c55930ceaad3ae</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2025-02-11 20:52:25</sys_created_on>
+<sys_id>074abb9783271210d5c55930ceaad3af</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>194f6c895c90000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2025-02-11 20:52:25</sys_updated_on>
+<table>incident</table>
+<target_name>Avoid Assignment to Restricted Groups</target_name>
+<type>Client Script</type>
+<update_domain>global</update_domain>
+<update_guid>723ab7d7e6271210cce203a44f1e3c54</update_guid>
+<update_guid_history>723ab7d7e6271210cce203a44f1e3c54:-227890340,f1749b53a5631210dadae28d5e4394b1:-720004241,0f34971f73631210bf5a64a20872e2bf:-1380134009,6e24db176d631210fba81fd6baecac85:-1790200150,84b3dbdbab63121087c2a9dce53ca889:-1644755103,5e2b871322631210bcfc498292a6b392:-1318687275,fdea8753c66312100ed667a2b73551bc:1778583893,8cd98bdf7f2312108895557a340f5c2d:1943424776,f777835f3423121008eb91a0a5255ede:-1983074825,85274b9be72312109fb096a065f2454e:1559565604</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_properties_6f88c79f83231210d5c55930ceaad397</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties"><sys_properties action="INSERT_OR_UPDATE"><choices/><description>Restricted Groups List:&#13;
+Change Management&#13;
+Problem Analyzers&#13;
+Problem Solving&#13;
+Database&#13;
+</description><ignore_cache>true</ignore_cache><is_private>false</is_private><name>restricted_group_sys_id</name><read_roles/><suffix/><sys_class_name>sys_properties</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-02-11 17:15:44</sys_created_on><sys_id>6f88c79f83231210d5c55930ceaad397</sys_id><sys_mod_count>3</sys_mod_count><sys_name>restricted_group_sys_id</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_properties_6f88c79f83231210d5c55930ceaad397</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-02-11 20:47:56</sys_updated_on><type>string</type><value>a715cd759f2002002920bde8132e7018;6fcd3b573b331300ad3cc9bb34efc447;287ee6fea9fe198100ada7950d0b1b73;0c4e7b573b331300ad3cc9bb34efc461</value><write_roles/></sys_properties><sys_translated_text action="delete_multiple" query="documentkey=6f88c79f83231210d5c55930ceaad397"/></record_update>]]></payload>
+<payload_hash>-2095116256</payload_hash>
+<remote_update_set display_value="G_Scratchpad Example">074abb9783271210d5c55930ceaad3ae</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2025-02-11 20:52:25</sys_created_on>
+<sys_id>0b4abb9783271210d5c55930ceaad3ae</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>194f6c4c0850000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2025-02-11 20:52:25</sys_updated_on>
+<table/>
+<target_name>restricted_group_sys_id</target_name>
+<type>System Property</type>
+<update_domain>global</update_domain>
+<update_guid>a1497bd7dd271210897409642d853456</update_guid>
+<update_guid_history>a1497bd7dd271210897409642d853456:-2095116256,5525935f216312107c1a3f8336c88110:-831837807,be6a4f13e8631210808c3077224b0969:827257809,15b8c79fe32312109ff50ef516e608a3:1704920679</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_script_2229c35f83231210d5c55930ceaad33b</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script"&gt;&lt;sys_script action="INSERT_OR_UPDATE"&gt;&lt;abort_action&gt;false&lt;/abort_action&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;action_delete&gt;false&lt;/action_delete&gt;&lt;action_insert&gt;false&lt;/action_insert&gt;&lt;action_query&gt;false&lt;/action_query&gt;&lt;action_update&gt;false&lt;/action_update&gt;&lt;active&gt;true&lt;/active&gt;&lt;add_message&gt;false&lt;/add_message&gt;&lt;advanced&gt;true&lt;/advanced&gt;&lt;change_fields&gt;false&lt;/change_fields&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;collection&gt;incident&lt;/collection&gt;&lt;condition/&gt;&lt;description/&gt;&lt;execute_function&gt;false&lt;/execute_function&gt;&lt;filter_condition/&gt;&lt;is_rest&gt;false&lt;/is_rest&gt;&lt;message/&gt;&lt;name&gt;Restricted Group Scrachpad&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;priority&gt;100&lt;/priority&gt;&lt;rest_method/&gt;&lt;rest_method_text/&gt;&lt;rest_service/&gt;&lt;rest_service_text/&gt;&lt;rest_variables/&gt;&lt;role_conditions/&gt;&lt;script&gt;&lt;![CDATA[(function executeRule(current, previous /*null when async*/) {
+	
+	/*******************************************************
+	// fetches the property to get list of restricted groups
+	********************************************************/
+	g_scratchpad.restricted_group_property = gs.getProperty('restricted_group_sys_id');
+
+})(current, previous);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-11 17:19:38&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;2229c35f83231210d5c55930ceaad33b&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name&gt;Restricted Group Scrachpad&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_2229c35f83231210d5c55930ceaad33b&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-11 20:49:25&lt;/sys_updated_on&gt;&lt;template/&gt;&lt;when&gt;before_display&lt;/when&gt;&lt;/sys_script&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=2229c35f83231210d5c55930ceaad33b"/&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id&gt;2229c35f83231210d5c55930ceaad33b&lt;/id&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-11 17:19:37&lt;/sys_created_on&gt;&lt;sys_id&gt;c69983df83231210d5c55930ceaad34d&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-11 17:19:37&lt;/sys_updated_on&gt;&lt;table&gt;sys_script&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+<payload_hash>941280824</payload_hash>
+<remote_update_set display_value="G_Scratchpad Example">074abb9783271210d5c55930ceaad3ae</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2025-02-11 20:52:25</sys_created_on>
+<sys_id>434abb9783271210d5c55930ceaad3af</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>194f6c61b4c0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2025-02-11 20:52:25</sys_updated_on>
+<table>incident</table>
+<target_name>Restricted Group Scrachpad</target_name>
+<type>Business Rule</type>
+<update_domain>global</update_domain>
+<update_guid>db99ffd7f12712105760fbe731ef6080</update_guid>
+<update_guid_history>db99ffd7f12712105760fbe731ef6080:941280824,5e99c3df07231210c3b42a5f79a856c4:-1879172487</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>
